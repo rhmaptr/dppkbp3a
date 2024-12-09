@@ -9,12 +9,12 @@
 <style type="text/tailwindcss">
     @layer utilities {
         .Beranda{
-            @apply relative ml-10 font-semibold text-blue-900
+            @apply relative ml-10 font-semibold text-gray-500 hover:text-blue-900
         }
         .Beranda::after{
             @apply content-[''] bg-blue-900 rounded-xl h-1 w-[0%] left-0 -bottom-4 absolute duration-200
         }
-        .Beranda::after{
+        .Beranda:hover:after{
             @apply w-[100%]
         }
     }
@@ -80,6 +80,7 @@
     }
 </style>
 <body>
+<body>
     <div class="bg-transparent w-screen h-screen no-scrollbar">
         <div class="bg-white w-screen h-14 flex">
         <div class="flex items-center">
@@ -87,26 +88,30 @@
                 <a href="#visi" class="Visi">Visi misi</a>
                 <a href="#pusat" class="Pusat">Pusat tindakan</a>
         </div>
-        <div class="bg-red-400 w-36 h-28 ml-[300px] rounded-full relative flex items-center justify-center">
-            <div class="bg-green-400 w-20 h-24 rounded-[40px] ">
-            <img src="logo_kb.png" class=" w-20 h-24">
+        <div class="bg-white w-36 h-28 ml-[265px] rounded-full  border-b-4 border-blue-400 relative flex items-center justify-center">
+            <div class="bg-white w-32 h-24 rounded-[40px]">
+            <img src="logo_kb.png" class=" w-80 h-36 -mt-5">
             </div>
         </div>
-        <div class="flex items-center ml-[215px]">
+        <div class="flex items-center ml-[265px]">
                 <a href="#layanan" class="Layanan">Layanan</a>
                 <a href="#berita" class="Berita">Berita</a>
                 <a href="#dokumentasi" class="Dokumentasi">Dokumentasi</a>
         </div>
         </div>
         <div class="bg-blue-400 w-screen h-1"></div>
-        <div id="slider" class="flex transition-transform duration-500 ease-in-out">
-        <div class="bg-transparent w-screen h-screen">
-        <img src="DPPKBP3A page 1.png"/>
-        <button id="prev" class="absolute top-2/3 left-4 -translate-y-1/2 bg-transparent text-white p-2 rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg> </button>
-        <button id="next" class="absolute top-2/3 right-4 -translate-y-1/2 bg-transparent text-white p-2 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg></button>
+        <div class="bg-white w-full h-full no-scrollbar flex">
+            <div class="bg-transparent w-[720px] h-full">
+                <div class="bg-white w-[275px] h-[45px] mt-10 ml-10 font-semibold text-[25px]">Pusat Tindakan DPPKBP</div>
+                <div class="bg-transparent w-[620px] h-[500px] mt-5 ml-10">
+                    <div class="bg-white w-[125px] h-[25px] text-slate-900 font-semibold text-[15px]">Tuliskan Keluhan</div>
+                    <textarea class=" w-[620px] h-[250px] text-black pl-[15px] pb-[2px] border-2 border-slate-300 rounded-lg shadow-md"></textarea>
+                    <button class="bg-blue-500 w-[620px] h-[40px] text-white pl-[15px] pb-[2px] rounded-xl shadow-md mt-7">Kirim</button>
+            </div>
+            </div>
+            <div class="bg-green-300 w-[720px] h-full">
+                <img src="lo-lindo-PPEptzBa44Q-unsplash.jpg" alt="Example" class="w-full h-full object-cover" />
+            </div>
         </div>
-        </div>
-     </div>
-    </div>
 </body>
 </html>
