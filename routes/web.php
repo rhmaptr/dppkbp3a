@@ -50,6 +50,18 @@ Route::get('/tindakanpa3', function () {
     return view('tindakanpa3');
 });
 
+Route::get('/berita', function () {
+    return view('berita');
+});
+
+Route::get('/popup_simpan', function () {
+    return view('popup_simpan');
+});
+
+Route::get('/popup_hapus', function () {
+    return view('popup_hapus');
+});
+
 Route::get('/program', function () {
     return view('program');
 });
