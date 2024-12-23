@@ -65,3 +65,31 @@ Route::get('/popup_hapus', function () {
 Route::get('/program', function () {
     return view('program');
 });
+
+Route::get('/poster', function () {
+    return view('poster');
+});
+
+Route::get('/visi_admin', function () {
+    return view('visi_admin');
+});
+
+Route::get('/pusat_admin', function () {
+    return view('pusat_admin');
+});
+
+Route::get('/layanan_admin', function () {
+    return view('layanan_admin');
+});
+
+Route::get('/dokumentasi', function () {
+    return view('dokumentasi');
+});
+
+Route::get('/berita_admin', function () {
+    return view('berita_admin');
+});
+
+Route::get('/tambah_berita', function () {
+    return view('tambah_berita');
+});
