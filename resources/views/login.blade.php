@@ -23,7 +23,7 @@
         <input type="password" name="sandi" placeholder="Masukkan Kata Sandi" class="w-[340px] h-[38px] rounded-[20px] ml-[30px] text-black pl-[15px] border-2 border-blue-200"></input>
       </div>
       <div class="bg-transparent w-full h-[40px] mt-[15px]">
-        <button class="bg-[#5e87c7] w-[340px] h-[40px] rounded-[20px] ml-[30px] flex items-center justify-center text-white font-medium hover:bg-[#3b86fe]">Masuk</button>
+        <button name="masuk" class="bg-[#5e87c7] w-[340px] h-[40px] rounded-[20px] ml-[30px] flex items-center justify-center text-white font-medium hover:bg-[#3b86fe]">Masuk</button>
       </div>
     </div>
   </div>
