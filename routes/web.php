@@ -2,12 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AdminAuthController;
+
+
+// Rute GET pikeun nampilin form login
+Route::get('/login', [AdminAuthController::class, 'index'])->name('login');
+
+// Rute POST pikeun ngirim data login
+Route::post('/login', [AdminAuthController::class, 'login']);
+
+// Rute untuk halaman beranda setelah login
+Route::get('/beranda', function () {
+    return view('beranda');
+})->name('beranda');
+
+
 Route::get('/landing', function () {
     return view('landing');
-});
-
-Route::get('/login', function () {
-    return view('login');
 });
 
 Route::get('/beranda', function () {
