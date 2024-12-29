@@ -18,7 +18,7 @@
           <div class="bg-blue-500 w-[5px] h-full"></div>
         </div>
         <!-- pengaduan -->
-        <div name="program" class="bg-white w-full h-[40px] flex hover:bg-[#f3f1f1] hover:bg-opacity-70">
+        <div name="pengaduan" class="bg-white w-full h-[40px] flex hover:bg-[#f3f1f1] hover:bg-opacity-70">
           <div class="bg-transparent w-[45px] flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256"><path d="M168,112a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,112Zm-8,24H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm72-8A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"></path></svg>
           </div>
@@ -64,10 +64,56 @@
           <div class="bg-transparent w-[45px] flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256"><path d="M120,216a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H56V208h56A8,8,0,0,1,120,216Zm109.66-93.66-40-40a8,8,0,0,0-11.32,11.32L204.69,120H112a8,8,0,0,0,0,16h92.69l-26.35,26.34a8,8,0,0,0,11.32,11.32l40-40A8,8,0,0,0,229.66,122.34Z"></path></svg>
           </div>
-          <div class="bg-transparent w-[174px] flex items-center font-normal text-[17px] hover:font-medium cursor-pointer">Keluar</div>
-        </div>
+          <div class="bg-transparent w-[174px] flex items-center font-normal text-[17px] hover:font-medium cursor-pointer">
+            <!-- Kalimat untuk memicu pop-up -->
+            <p class="text-lg font-semibold">
+                <span id="logoutText" class=" cursor-pointer hover:underline">Keluar</span>
+                </p>
+            <!-- Pop-up -->
+            <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center flex z-50">
+            <div class="bg-white rounded-lg shadow-lg w-96 p-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-4 text-center">Apakah Anda ingin keluar?</h2>
+                <div class="flex justify-center space-x-4">
+            <!-- Tombol Ya -->
+            <form method="POST">
+            <button name="confirmYes" class="px-7 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600"> Ya</button>
+            </form>
+            <!-- Tombol Tidak -->
+            <button id="confirmNo" class="px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-700">Tidak</button>
+            </div>
+            </div>
+            </div>
 
+    <script>
+        const logoutText = document.getElementById('logoutText');
+        const popup = document.getElementById('popup');
+        const confirmNo = document.getElementById('confirmNo');
+
+    // Tampilkan pop-up saat kalimat "Keluar" diklik
+        logoutText.addEventListener('click', () => {
+        popup.classList.remove('hidden');
+    });
+
+    // Sembunyikan pop-up jika tombol "Tidak" diklik
+        confirmNo.addEventListener('click', () => {
+        popup.classList.add('hidden');
+    });
+    </script>
+
+  <?php
+    // Tangani aksi logout
+    if (isset($_POST['confirmYes'])) {
+        echo "<script>alert('Anda telah keluar.');</script>";
+    // Redirect atau aksi lain dapat ditambahkan di sini
+    // Contoh redirect:
+    // header('Location: login.php');
+    // exit();
+  }
+  ?>
+          </div>
+        </div>
       </div>
+      
       <div class="bg-transparent w-full h-screen">
         <div class="bg-transparent w-full h-[35px] flex">
            <div class="bg-white w-[32px] h-full ml-8 flex items-center justify-center "><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3b86fe" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-68-76a12,12,0,1,1-12-12A12,12,0,0,1,140,132Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,132ZM96,172a12,12,0,1,1-12-12A12,12,0,0,1,96,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,140,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,172Z"></path></svg></div>

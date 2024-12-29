@@ -83,10 +83,10 @@
 
 <body>
     <div class="bg-transparent w-screen h-screen no-scrollbar">
-        <div class="bg-white w-screen h-14 flex fixed shadow-blue-400 shadow-md z-50">
+        <div class="bg-white w-screen h-14 flex fixed shadow-blue-400 shadow-md z-50 ">
             <div class="flex items-center ml-[5px]">
                 <a href="#beranda" class="Beranda">Beranda</a>
-                <a href="#visi" class="Visi">Visi misi</a>
+                <a href="#visi" class="Visi scroll-m-36">Visi misi</a>
                 <a href="#pusat" class="Pusat">Pusat Pengaduan</a>
             </div>
             <div
@@ -101,26 +101,10 @@
                 <a href="#dokumentasi" class="Dokumentasi">Dokumentasi</a>
             </div>
         </div>
-        <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+        
             <div class="bg-[#ebebeb] w-screen h-screen">
-                <img src="DPPKBP3A page 1.png" class="mt-7" />
-                <button id="prev"
-                    class="absolute top-2/3 left-4 -translate-y-1/2 bg-transparent text-white p-2 rounded-full"> <svg
-                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
-                        <path
-                            d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z">
-                        </path>
-                    </svg> </button>
-                <button id="next"
-                    class="absolute top-2/3 right-4 -translate-y-1/2 bg-transparent text-white p-2 rounded-full"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
-                        <path
-                            d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
-                        </path>
-                    </svg></button>
             </div>
-        </div>
-        <div class="bg-[#fafafa] w-screen h-screen mt-[-70px]">
+        <div id="visi" class="bg-[#fafafa] w-screen h-screen mt-[-70px]">
             <div
                 class="bg-transparent w-full h-[50px] flex items-center justify-center font-semibold text-[#3B86FE] mt-[230px] text-[30px] pt-[60px]">
                 Visi Dan Misi Kota Tasikmalaya</div>
@@ -242,12 +226,60 @@
                 Layanan Kami</div>
             <div class="bg-transparent w-[500px] ml-[160px] font-medium text-gray-700">Berikut Layanan Yang Kami
                 sediakan untuk Masyarakat Kota Tasikmalaya</div>
-            <div class="bg-transparent w-full h-[300px] mt-[10px] flex items-center justify-center">
-                <div class="bg-white w-[300px] h-[250px] rounded-[10px] shadow-lg"></div>
-                <div class="bg-white w-[300px] h-[250px] rounded-[10px] ml-[70px] shadow-lg"></div>
-                <div class="bg-white w-[300px] h-[250px] rounded-[10px] ml-[70px] shadow-lg"></div>
+            <div class="bg-transparent w-full h-[400px] flex items-center justify-center">
+                <!-- layanan 1 -->
+                <div class="bg-transparent w-[300px] h-[350px] rounded-[10px] flex-col">
+                    <div class="bg-white w-full h-[300px]">
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg w-full h-full">
+                        <img 
+                            src="DPPKBP3A page2.png" 
+                            alt="Berita" 
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <h3 class="text-lg font-semibold">DPPKB</h3>
+                        <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, doloremque?</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="bg-yellow-200-300 w-full h-[50px] text-[#3B86FE] hover:text-blue-600 cursor-pointer pt-3">Selengkapnya...</div>
+                </div>
+                <!-- layanan 2 -->
+                <div class="bg-transparent w-[300px] h-[350px] rounded-[10px] ml-[70px]">
+                    <div class="bg-white w-full h-[300px]">
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg w-full h-full">
+                        <img 
+                            src="DPPKBP3A page 1.png" 
+                            alt="Berita" 
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <h3 class="text-lg font-semibold">PEMBERDAYAAN PEREMPUAN</h3>
+                        <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, doloremque?</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="bg-yellow-200-300 w-full h-[50px] text-[#3B86FE] hover:text-blue-600 cursor-pointer pt-3">Selengkapnya...</div>
+                </div>
+                <!-- layanan 3 -->
+                <div class="bg-transparent w-[300px] h-[350px] rounded-[10px] ml-[70px]">
+                    <div class="bg-white w-full h-[300px]">
+                        <div class="group relative overflow-hidden rounded-lg shadow-lg w-full h-full">
+                        <img 
+                            src="DPPKBP3A page3.png" 
+                            alt="Berita" 
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <h3 class="text-lg font-semibold">PERLINDUNGAN ANAK</h3>
+                        <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, doloremque?</p>
+                    </div>
+                    </div></div>
+                    <div class="bg-yellow-200-300 w-full h-[50px] text-[#3B86FE] hover:text-blue-600 cursor-pointer pt-3">Selengkapnya...</div>
+                </div>
             </div>
         </div>
+        <!-- galeri -->
         <div class="bg-[#f5f4f4] w-screen h-screen flex">
             <div class="bg-transparent w-[600px] h-full flex-col">
                 <div class="bg-transparent  w-[500px] h-[30px] mt-52 ml-10 font-semibold flex items-center ">Galeri
@@ -263,7 +295,48 @@
                         Semua</button>
                 </div>
             </div>
-            <div class="bg-blue-500 w-[765px] h-full"></div>
+            <div class="bg-blue-500 w-[765px] h-full flex flex-wrap justify-between items-start">
+                <div class="bg-green-300 w-[255px] h-[150px]">
+                <div class="group relative overflow-hidden shadow-lg w-full h-full">
+                        <img 
+                            src="DPPKBP3A page2.png" 
+                            alt="Berita" 
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <h3 class="text-lg font-semibold">DPPKB</h3>
+                        <p class="text-sm">Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="bg-green-400 w-[255px] h-[150px]">
+                <div class="group relative overflow-hidden shadow-lg w-full h-full">
+                        <img 
+                            src="DPPKBP3A page2.png" 
+                            alt="Berita" 
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <h3 class="text-lg font-semibold">PEMBERDAYAAN PEREMPUAN</h3>
+                        <p class="text-sm">Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="bg-green-500 w-[255px] h-[150px]">
+                <div class="group relative overflow-hidden shadow-lg w-full h-full">
+                        <img 
+                            src="DPPKBP3A page2.png" 
+                            alt="Berita" 
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <h3 class="text-lg font-semibold">PERLINDUNGAN ANAK</h3>
+                        <p class="text-sm">Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
         <div class="bg-[#fafafa] w-screen h-screen flex-col pt-20">
             <div

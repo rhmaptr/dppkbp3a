@@ -7,15 +7,24 @@
     <title>DPPKBP3A</title>
 </head>
 <body>
-    <div class="bg-blue-300 w-screen h-screen flex items-center justify-center">
-        <div class="bg-white w-[300px] h-[165px] rounded-xl">
-            <div class="bg-transparent w-full h-[55px] mt-4 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#eb0a0a" viewBox="0 0 256 256"><path d="M165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path></svg></div>
-            <div class="bg-transparent w-full h-[30px] mt-2 font-semibold text-[12px] flex items-center justify-center">Yakin ingin menghapus data tersebut?</div>
-            <div class="bg-transparent w-full h-[35px] mt-2 flex items-center justify-center font-semibold">
-            <button class="bg-red-600 w-[75px] h-[25px] rounded-lg flex items-center justify-center font-semibold text-white text-[15px] hover:bg-red-700 ml-3">Batal</button>
-                <button class="bg-green-400 w-[75px] h-[25px] rounded-lg flex items-center justify-center font-semibold text-white text-[15px] hover:bg-green-500 ml-3">Ya</button>
-            </div>
-        </div>
+<div class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50" id="popup">
+  <div class="bg-white rounded-lg shadow-lg p-6 w-80">
+    <h2 class="text-lg font-semibold text-gray-800 flex justify-center items-center">Konfirmasi</h2>
+    <p class="text-sm text-gray-600 flex justify-center items-center">Apakah Anda yakin ingin menghapus?</p>
+    <div class="flex justify-center items-center mt-4">
+      <button 
+        class="px-4 py-1 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 mr-2" 
+        onclick="closePopup()">
+        Batal
+      </button>
+      <button 
+        class="px-4 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600" 
+        onclick="deleteItem()">
+        Hapus
+      </button>
     </div>
+  </div>
+</div>
+
 </body>
 </html>

@@ -77,8 +77,8 @@ Route::get('/program', function () {
     return view('program');
 });
 
-Route::get('/poster', function () {
-    return view('poster');
+Route::get('/pengaduan', function () {
+    return view('pengaduan');
 });
 
 Route::get('/visi_admin', function () {
@@ -104,3 +104,12 @@ Route::get('/berita_admin', function () {
 Route::get('/tambah_berita', function () {
     return view('tambah_berita');
 });
+
+Route::get('/poster', function () {
+    return view('poster');
+});
+
+Route::get('/animasi', function () {
+    return view('animasi');
+});
+
