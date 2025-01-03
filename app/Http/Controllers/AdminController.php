@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     public function showLoginForm()
     {
-        return view('admin.login');
+        return view('login');
     }
 
     public function login(Request $request)
@@ -17,15 +17,15 @@ class AdminController extends Controller
         $credentials = $request->only('name', 'password');
 
         if (Auth::guard('admin')->attempt($credentials)) {
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('beranda');
         }
 
         return back()->withErrors(['name' => 'Login gagal.']);
     }
 
-    public function dashboard()
+    public function beranda()
     {
-        return view('admin.dashboard');
+        return view('beranda');
     }
 }
 

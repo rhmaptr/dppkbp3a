@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class AdminSeeder
+class AdminSeeder extends Seeder
 {
     public function run()
     {
