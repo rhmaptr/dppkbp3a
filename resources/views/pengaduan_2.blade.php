@@ -25,7 +25,7 @@
                     Beranda</div>
             </div>
             <!-- pengaduan -->
-            <div onclick="window.location.href='http://localhost:8000/pengaduan'" name="pengaduan" class="bg-white w-full h-[40px] flex hover:bg-[#f3f1f1] hover:bg-opacity-30">
+            <div onclick="window.location.href='http://localhost:8000/pengaduan'" name="pengaduan" class="w-full h-[40px] flex bg-[#f3f1f1] bg-opacity-50">
                 <div class="bg-transparent w-[45px] flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
                         <path
@@ -33,12 +33,12 @@
                         </path>
                     </svg>
                 </div>
-                <div
-                    class="bg-transparent w-[174px] flex items-center font-normal text-[17px] hover:font-medium cursor-pointer">
-                    Pengaduan</div>
+                <div class="bg-transparent w-[174px] flex items-center text-[17px] font-medium cursor-pointer">Pengaduan
+                </div>
+                <div class="bg-blue-500 w-[5px] h-full"></div>
             </div>
             <!-- poster -->
-            <div onclick="window.location.href='http://localhost:8000/poster'" name="poster" class="w-full h-[40px] flex bg-[#f3f1f1] bg-opacity-50">
+            <div onclick="window.location.href='http://localhost:8000/poster'" name="poster" class="bg-white w-full h-[40px] flex hover:bg-[#f3f1f1] hover:bg-opacity-30">
                 <div class="bg-transparent w-[45px] flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
                         <path
@@ -46,13 +46,12 @@
                         </path>
                     </svg>
                 </div>
-                <div class="bg-transparent w-[174px] flex items-center text-[17px] font-medium cursor-pointer">Poster
-                </div>
-                <div class="bg-blue-500 w-[5px] h-full"></div>
+                <div
+                    class="bg-transparent w-[174px] flex items-center font-normal text-[17px] hover:font-medium cursor-pointer">
+                    Poster</div>
             </div>
             <!-- visi misi -->
-            <div onclick="window.location.href='http://localhost:8000/visi_admin'" name="visi"
-                class="bg-white w-full h-[40px] flex hover:bg-[#f3f1f1] hover:bg-opacity-30">
+            <div onclick="window.location.href='http://localhost:8000/visi_admin'" name="visi" class="bg-white w-full h-[40px] flex hover:bg-[#f3f1f1] hover:bg-opacity-30">
                 <div class="bg-transparent w-[45px] flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
                         <path
@@ -91,7 +90,7 @@
                     Dokumentasi</div>
             </div>
             <!-- berita -->
-            <div onclick="window.location.href='http://localhost:8000/berita_admin'" name="berita" class="bg-white w-full h-[40px] flex hover:bg-[#f3f1f1] hover:bg-opacity-30 ">
+            <div onclick="window.location.href='http://localhost:8000/berita_admin'" name="berita" class="bg-white w-full h-[40px] flex hover:bg-[#f3f1f1] hover:bg-opacity-30">
                 <div class="bg-transparent w-[45px] flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
                         <path
@@ -182,7 +181,7 @@
                 </div>
             </div>
             <div class="bg-transparent w-[1100px] h-[550px] mt-10 ml-8 rounded-lg shadow-lg flex-col">
-                <div class="bg-transparent w-full h-[35px] font-semibold text-[20px] pt-1 pl-3">Poster</div>
+                <div class="bg-transparent w-full h-[35px] font-semibold text-[20px] pt-1 pl-3">Konten Pengaduan</div>
                 <div class="bg-transparent w-full h-[35px] font-semibold text-[20px] pl-3 flex">
                     <form class="relative max-w-md">
                         <input type="text" placeholder="Telusuri..."
@@ -215,16 +214,20 @@
                                 <thead>
                                     <tr class="bg-[#3B86FE] text-white">
                                         <th class="px-4 py-2">No</th>
-                                        <th class="px-4 py-2">Gambar</th>
+                                        <th class="px-4 py-2">gambar</th>
+                                        <th class="px-4 py-2">Judul</th>
+                                        <th class="px-4 py-2">Penjelasan</th>
                                         <th class="px-4 py-2">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="bg-gray-50 ">
                                         <td class=" px-4 py-2 text-center">1</td>
-                                        <td class=" px-4 py-2">
-                                            <div class="bg-red-300 w-24 h-14"></div>
+                                        <td class=" px-4 py-2 text-center flex items-center justify-center">
+                                            <div class="bg-red-300 w-16 h-10 "></div>
                                         </td>
+                                        <td class=" px-4 py-2 text-center">DPPKBP</td>
+                                        <td class=" px-4 py-2 text-center">Lorem ipsum dolor sit amet.</td>
                                         <td class=" px-4 py-2  flex items-center justify-center">
                                             <div class="bg-transparent w-[70px] h-[30px] flex">
                                                 <div
@@ -248,7 +251,11 @@
                                     </tr>
                                     <tr class="bg-gray-50 border-2 border-gray-300">
                                         <td class=" px-4 py-2 text-center">2</td>
-                                        <td class=" px-4 py-2 text-center"></td>
+                                        <td class=" px-4 py-2 text-center flex items-center justify-center">
+                                            <div class="bg-red-300 w-16 h-10 "></div>
+                                        </td>
+                                        <td class=" px-4 py-2 text-center">Pemberdayaan Perempuan</td>
+                                        <td class=" px-4 py-2 text-center">Lorem ipsum dolor sit amet.</td>
                                         <td class=" px-4 py-2 flex items-center justify-center">
                                             <div class="bg-transparent w-[70px] h-[30px] flex">
                                                 <div

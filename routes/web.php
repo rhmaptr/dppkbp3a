@@ -1,20 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
-use App\Http\Controllers\AdminAuthController;
 
-
-// Rute GET pikeun nampilin form login
-Route::get('/login', [AdminAuthController::class, 'index'])->name('login');
-
-// Rute POST pikeun ngirim data login
-Route::post('/login', [AdminAuthController::class, 'login']);
-
-// Rute untuk halaman beranda setelah login
-Route::get('/beranda', function () {
-    return view('beranda');
-})->name('beranda');
+Route::prefix('admin')->group(function () {
+    Route::get('login', [AdminController::class, 'showLoginForm'])->name('login');
+    Route::post('login', [AdminController::class, 'login'])->name('login.submit');
+    Route::middleware('auth:admin')->group(function () {
+        Route::get('beranda', [AdminController::class, 'beranda'])->name('beranda');
+    });
+});
 
 
 Route::get('/landing', function () {
@@ -111,5 +107,21 @@ Route::get('/poster', function () {
 
 Route::get('/animasi', function () {
     return view('animasi');
+});
+
+Route::get('/galeri', function () {
+    return view('galeri');
+});
+
+Route::get('/pengaduan_2', function () {
+    return view('pengaduan_2');
+});
+
+Route::get('/edit_berita', function () {
+    return view('edit_berita');
+});
+
+Route::get('/visi_misi', function () {
+    return view('visi_misi');
 });
 

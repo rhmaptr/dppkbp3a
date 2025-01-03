@@ -84,7 +84,7 @@
 <body>
 
     <body>
-        <div class="bg-transparent w-screen h-screen no-scrollbar">
+        <div class="bg-red-300 w-screen h-screen no-scrollbar">
             <div class="bg-white w-screen h-14 flex ">
                 <div class="flex items-center">
                     <a href="#beranda" class="Beranda">Beranda</a>
@@ -104,22 +104,9 @@
                 </div>
             </div>
             <div class="bg-blue-400 w-screen h-1"></div>
-            <div class="bg-white w-full h-full no-scrollbar flex">
-                <div class="bg-transparent w-[720px] h-full">
-                    <div class="bg-white w-[575px] h-[45px] mt-10 ml-10 font-semibold text-[25px]">Pusat Tindakan
-                        Perlindungan Anak</div>
-                    <div class="bg-transparent w-[620px] h-[500px] mt-5 ml-10">
-                        <div class="bg-white w-[125px] h-[25px] text-slate-900 font-semibold text-[15px]">Tuliskan
-                            Keluhan</div>
-                        <textarea
-                            class=" w-[620px] h-[250px] text-black pl-[15px] pb-[2px] border-2 border-slate-300 rounded-lg shadow-md"></textarea>
-                        <button
-                            class="bg-blue-500 w-[620px] h-[40px] text-white pl-[15px] pb-[2px] rounded-xl shadow-md mt-7 hover:bg-[#336fd1]">Kirim</button>
-                    </div>
-                </div>
-                <div class="bg-transparent w-[720px] h-full">
-                    <img src="lo-lindo-PPEptzBa44Q-unsplash.jpg" alt="Example" class="w-full h-full object-cover" />
-                </div>
+            <div class="bg-blue-500 w-screen h-[180px] flex items-center justify-center">
+                <div class="bg-yellow-300 w-screen h-[35px] text-white font-semibold text-[30px] pl-10 ">Profil DPPKBP3A</div>
+            </div>
             </div>
     </body>
 

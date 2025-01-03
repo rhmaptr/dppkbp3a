@@ -2,17 +2,18 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use App\Models\Admin;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class AdminSeeder extends Seeder
+class AdminSeeder
 {
     public function run()
     {
-        Admin::create([
-            'username' => 'admin',
-            'password' => Hash::make('123'),
+        DB::table('admins')->insert([
+            'name' => 'admin',
+            'password' => Hash::make('password123'),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
     }
 }
