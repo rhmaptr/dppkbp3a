@@ -80,9 +80,6 @@
         }
     }
 </style>
-
-<body>
-
     <body>
         <div class="bg-red-300 w-screen h-screen no-scrollbar">
             <div class="bg-white w-screen h-14 flex ">

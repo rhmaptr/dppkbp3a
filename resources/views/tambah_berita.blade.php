@@ -22,9 +22,9 @@
                     </svg></button>
             </div>
             <div class="bg-black w-full h-1"></div>
-            <div class="bg-transparent w-full h-[30px] mt-3 font-medium text-[20px] pl-5">Gambar</div>
-            <div class="bg-transparent w-full h-[170px]">
-                <div
+            <div class="bg-transparent w-full h-[30px] mt-3 font-medium text-[18px] pl-5">Gambar</div>
+            <div class="bg-transparent w-full h-[140px]">
+                <div name="image"
                     class="bg-slate-50 w-[560px]  ml-5 h-full rounded-lg border-slate-200 border-2 shadow-md flex items-center justify-center relative overflow-hidden">
                     <button onclick="openFileDialog()">
                         <img id="cameraIcon" src="camera-plus.svg" alt="Kamera"
@@ -59,22 +59,22 @@
                     </script>
                 </div>
             </div>
-            <div for="dateInput" class="bg-transparent w-full h-[30px] mt-5 font-medium text-[20px] pl-5">Tanggal</div>
+            <div for="dateInput" class="bg-transparent w-full h-[30px] mt-3 font-medium text-[18px] pl-5">Tanggal</div>
             <div class="bg-transparent w-full h-[50px]">
                 <input type="date" id="dateInput"
                     class="bg-slate-50 w-[560px] border border-gray-300 rounded-lg px-3 py-2 ml-5 pl-5 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700">
             </div>
-            <div class="bg-transparent w-full h-[30px] mt-2 font-medium text-[20px] pl-5">Judul</div>
+            <div class="bg-transparent w-full h-[30px] mt-1 font-medium text-[18px] pl-5">Judul</div>
             <div class="bg-transparent w-full h-[50px]">
-                <input type="text"
-                    class="bg-slate-50 w-[560px] h-full text-black pl-3 ml-4 pb-[2px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></input>
+                <input type="text" name="title"
+                    class="bg-slate-50 w-[560px] h-full text-black pl-5 ml-5 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></input>
             </div>
-            <div class="bg-transparent w-full h-[30px] mt-5 font-medium text-[20px] pl-5">Artikel</div>
+            <div class="bg-transparent w-full h-[30px] mt-2 font-medium text-[18px] pl-5">Artikel</div>
             <div class="bg-transparent w-full h-[40px]">
-                <input type="file"
-                    class="bg-slate-50 w-[560px] h-full text-black ml-5 pl-3 pb-[2px] border-2 border-slate-200 rounded-md shadow-md"></input>
+                <textarea name="content"
+                    class="bg-slate-50 w-[560px] h-[80px] text-black ml-5 pl-5  border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
             </div>
-            <div class="bg-transparent w-full h-[40px] mt-5 flex items-center justify-center">
+            <div class="bg-transparent w-full h-[40px] mt-16 flex items-center justify-center">
                 <button
                     class="bg-[#3B86FE] w-[560px] h-[40px] text-white flex items-center justify-center rounded-lg shadow-md hover:bg-[#336fd1]">Simpan</button>
             </div>
