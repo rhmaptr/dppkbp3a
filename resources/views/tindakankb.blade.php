@@ -40,7 +40,7 @@
                             <div class="bg-white w-[325px] h-[25px] mt-3 text-slate-900 font-semibold text-[15px]">
                                 Tempat,
                                 Tanggal lahir</div>
-                            <input type="text" name="ttl" id="ttl" required
+                            <input type="date" name="ttl" id="ttl" required
                                 class="w-[1280px] h-[40px] text-black pl-[15px] pb-[2px] border-2 border-slate-300 rounded-lg shadow-md">
                             <div class="bg-white w-[325px] h-[25px] mt-3 text-slate-900 font-semibold text-[15px]">
                                 Alamat
@@ -67,25 +67,29 @@
                             <div class="bg-white w-[325px] h-[25px] mt-3 text-slate-900 font-semibold text-[15px]">
                                 Jumlah
                                 Anak</div>
-                            <input type="text" name="jml_anak" id="jml_anak"
+                            <input type="number" name="jml_anak" id="jml_anak"
                                 class="w-[1280px] h-[40px] text-black pl-[15px] pb-[2px] border-2 border-slate-300 rounded-lg shadow-md">
                             <div class="bg-white w-[325px] h-[25px] mt-3 text-slate-900 font-semibold text-[15px]">Umur
                                 Anak
                             </div>
-                            <input type="text" name="umur_anak" id="umur_anak"
+                            <input type="number" name="umur_anak" id="umur_anak"
                                 class="w-[1280px] h-[40px] text-black pl-[15px] pb-[2px] border-2 border-slate-300 rounded-lg shadow-md">
                             <div class="bg-white w-[325px] h-[25px] mt-3 text-slate-900 font-semibold text-[15px]">
                                 Jumlah
                                 Anggota Keluarga Dalam Satu Rumah</div>
-                            <input type="text" name="jml_anggota" id="jml_anggota"
+                            <input type="number" name="jml_anggota" id="jml_anggota"
                                 class="w-[1280px] h-[40px] text-black pl-[15px] pb-[2px] border-2 border-slate-300 rounded-lg shadow-md">
                             <div class="bg-white w-[325px] h-[25px] mt-3 text-slate-900 font-semibold text-[15px]">Jenis
                                 Program</div>
                             <select name="category" id="category"
                                 class="w-[1280px] h-[40px] text-black pl-[15px] pb-[2px] border-2 border-slate-300 rounded-lg shadow-md">
                                 <option value="" disabled selected>Pilih Jenis Program</option>
-                                <option value="">pppp</option>
-                                <option value="">bbbbb</option>
+                                <option value="belum pernah">Belum Pernah</option>
+                                <option value="metode hormonal">Metode Hormonal</option>
+                                <option value="metode non hormonal">Metode non Hormonal</option>
+                                <option value="metode permanen">Metode Permanen</option>
+                                <option value="metode alami">Metode Alami</option>
+                                <option value="metode darurat">Metode Daruart</option>
                             </select>
                             <button type="button" onclick="prevStep()"
                                 class="bg-blue-500 w-[500px] h-[40px] text-white pl-[15px] pb-[2px] rounded-xl shadow-md mt-7 hover:bg-[#336fd1]">Sebelumnya</button>

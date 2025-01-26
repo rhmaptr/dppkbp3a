@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -9,6 +10,7 @@ class submitMultiStepController extends Controller
 {
     public function submitMultiStep(Request $request)
 {
+    Log::info($request);
     $request->validate([
         'name' => 'required|string|max:255',
         'nik' => 'required|digits:16|unique:users,nik',
@@ -19,7 +21,7 @@ class submitMultiStepController extends Controller
         'jml_anak' => 'required|integer|min:0',
         'umur_anak' => 'required|integer|min:0',
         'jml_anggota' => 'required|integer|min:1',
-        'category' => 'required|exists:categories,id',
+        'category' => 'required|exists:categories,name',
         'keluhan' => 'required|string|max:1000',
     ]);
 
@@ -33,7 +35,7 @@ class submitMultiStepController extends Controller
         'jml_anak' => $request->jml_anak,
         'umur_anak' => $request->umur_anak,
         'jml_anggota' => $request->jml_anggota,
-        'category_id' => $request->category,
+        'category' => $request->category,
         'keluhan' => $request->keluhan,
     ]);
 
