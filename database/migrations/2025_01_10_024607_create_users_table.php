@@ -20,7 +20,7 @@ return new class extends Migration
         $table->string('umur_anak');
         $table->string('jml_anggota');
         $table->string('category');
-        $table->string('keluhan');
+        $table->text('keluhan');
         $table->timestamps();
     });
 }

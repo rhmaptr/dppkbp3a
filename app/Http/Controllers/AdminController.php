@@ -20,7 +20,7 @@ class AdminController extends Controller
             return redirect()->route('beranda');
         }
 
-        return back()->withErrors(['name' => 'Login gagal.']);
+        return back()->withErrors(['password' => 'Login gagal.']);
     }
 
     public function beranda()

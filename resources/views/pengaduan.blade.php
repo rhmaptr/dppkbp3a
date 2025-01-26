@@ -10,7 +10,7 @@
 
 <body>
     <div class="bg-white w-screen h-screen flex">
-    <x-side2></x-side2>
+        <x-side2></x-side2>
         <div class="bg-transparent w-full h-screen">
             <div class="bg-transparent w-full h-[35px] flex">
                 <div class="bg-white w-[32px] h-full ml-8 flex items-center justify-center "><svg
@@ -29,7 +29,7 @@
             <div class="bg-transparent w-[1100px] h-[550px] mt-10 ml-8 rounded-lg shadow-lg flex-col">
                 <div class="bg-transparent w-full h-[40px] font-semibold text-[20px] pt-1 pl-3">Pengaduan Program
                     Dppkbp3a</div>
-                <!-- <div class="bg-transparent w-full h-[35px] pl-3">
+                <div class="bg-transparent w-full h-[35px] pl-3">
                     <select name="" id=""
                         class="w-[190px] h-[35px] text-black pl-[15px] pb-[2px] border-2 border-black rounded-lg shadow-md">
                         <option value="">Semua</option>
@@ -38,7 +38,46 @@
                         <option value="">Perlindungan Anak</option>
                     </select>
                 </div>
-                <div class="bg-transparent w-[1070px] h-[450px] mt-2 ml-3 rounded-lg shadow-lg flex-col">
+
+                <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        .btn-detail { color: white; background-color: blue; padding: 5px 10px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; }
+        .btn-detail:hover { background-color: darkblue; }
+    </style>
+</head>
+<body>
+    <h1>Data Pengguna</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>NIK</th>
+                <th>TTL</th>
+                <th>Alamat</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse ($users as $user)
+                <tr>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->nik }}</td>
+                    <td>{{ $user->ttl }}</td>
+                    <td>{{ $user->alamat }}</td>
+                    <td>
+                        <a href="{{ route('detail', $user->id) }}" class="btn-detail">Detail</a>
+                    </td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="5">Tidak ada data pengguna.</td>
+                </tr>
+            @endforelse
+        </tbody>
+    </table>
+                <!-- <div class="bg-transparent w-[1070px] h-[450px] mt-2 ml-3 rounded-lg shadow-lg flex-col">
                     <div class="bg-transparent w-[1040px] h-full ml-3 overflow-y-auto">
                         <div class="overflow-x-auto">
                             <table class="table-auto border-collapse border border-gray-200 w-full">
@@ -53,46 +92,63 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                    @foreach($users as $user)
+                                    <tr>
+                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->nik }}</td>
+                                        <td>{{ $user->ttl }}</td>
+                                        <td>
+                                            @if($user->category)
+                                            {{ $user->category->name }}
+                                            Menampilkan nama kategori
+                                            @else
+                                            N/A
+                                            @endif
+                                        </td>
+                                        <td>{{ $user->alamat }}</td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                </div>
-            </div> -->
+                </div> -->
+            </div>
 
-            <table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nama</th>
-            <th>NIK</th>
-            <th>TTL</th>
-            <th>Jenis Program</th>
-            <th>Alamat</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($users as $user)
-            <tr>
-                <td>{{ $user->id }}</td>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->nik }}</td>
-                <td>{{ $user->ttl }}</td>
-                <td>
-                    @if($user->category)
-                        {{ $user->category->name }} <!-- Menampilkan nama kategori -->
-                    @else
-                        N/A
-                    @endif
-                </td>
-                <td>{{ $user->alamat }}</td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
+            <!-- <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama</th>
+                        <th>NIK</th>
+                        <th>TTL</th>
+                        <th>Jenis Program</th>
+                        <th>Alamat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($users as $user)
+                    <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->nik }}</td>
+                        <td>{{ $user->ttl }}</td>
+                        <td>
+                            @if($user->category)
+                            {{ $user->category->name }}
+                            Menampilkan nama kategori
+                            @else
+                            N/A
+                            @endif
+                        </td>
+                        <td>{{ $user->alamat }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
 
         </div>
 </body>
 
-</html>
+</html> -->

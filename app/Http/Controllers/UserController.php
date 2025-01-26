@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User; // Mengimpor model User
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class UserController extends Controller
 {
     public function pengaduan()
     {

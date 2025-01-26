@@ -4,35 +4,52 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\submitMultiStepController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\BeritaController;
+
+// Route::post('/berita_admin', [BeritaController::class, 'store'])->name('store');
+Route::get('/berita_admin', [BeritaController::class, 'index'])->name('index');
+// Route::get('/admin/berita/create', [BeritaController::class, 'create'])->name('admin.berita.create');
+Route::post('/berita_admin', [BeritaController::class, 'store'])->name('berita_admin.store');
+Route::get('/berita_admin/{id}/edit', [BeritaController::class, 'edit'])->name('edit');
+Route::put('/berita_admin/{id}', [BeritaController::class, 'update'])->name('update');
+Route::delete('/berita_admin/{id}', [BeritaController::class, 'destroy'])->name('destroy');
+
 
 Route::get('/login', function () {
     return view('login');
 });
 
-Route::prefix('admin')->group(function () {
-    Route::get('login', [AdminController::class, 'showLoginForm'])->name('login');
-    Route::post('login', [AdminController::class, 'login'])->name('login.submit');
-    Route::middleware('auth:admin')->group(function () {
-        Route::get('beranda', [AdminController::class, 'beranda'])->name('beranda');
+Route::prefix('/login')->group(function () {
+Route::get('/login', [AdminController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AdminController::class, 'login'])->name('login.submit');
+Route::middleware('auth:admin')->group(function () {
+Route::get('beranda', [AdminController::class, 'beranda'])->name('beranda');
     });
 });
 
 
-Route::post('/submit-multistep', [FormController::class, 'submitMultiStep'])->name('submit.multistep');
+// Route::post('/submit-multistep', [FormController::class, 'submitMultiStep'])->name('submit.multistep');
+Route::get('/tindakankb', [FormController::class, 'tindakankb'])->name('tindakankb');
+Route::post('/tindakankb', [submitMultiStepController::class, 'submitMultiStep'])->name('tindakankb.submitMultiStep');
+Route::get('/pengaduan', [FormController::class, 'pengaduan'])->name('pengaduan');
 
 
 // Admin route
-Route::get('pengaduan', [AdminController::class, 'pengaduan'])->name('pengaduan');
+Route::get('/pengaduan', [UserController::class, 'pengaduan'])->name('pengaduan');
+Route::get('/detail/{id}', [submitMultiStepController::class, 'detail'])->name('detail');
+
 
 // Admin routes
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/news', [NewsController::class, 'adminIndex'])->name('news.index');
-    Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
-    Route::post('/news', [NewsController::class, 'store'])->name('news.store');
-});
+// Route::prefix('admin')->name('admin.')->group(function () {
+//     Route::get('/news', [NewsController::class, 'adminIndex'])->name('news.index');
+//     Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
+//     Route::post('/news', [NewsController::class, 'store'])->name('news.store');
+// });
 
 // Public routes
-Route::get('/news', [NewsController::class, 'userIndex'])->name('news.index');
+// Route::get('/news', [NewsController::class, 'userIndex'])->name('news.index');
 
 
 Route::get('/landing', function () {
@@ -95,10 +112,6 @@ Route::get('/program', function () {
     return view('program');
 });
 
-Route::get('/pengaduan', function () {
-    return view('pengaduan');
-});
-
 Route::get('/visi_admin', function () {
     return view('visi_admin');
 });
@@ -115,9 +128,9 @@ Route::get('/dokumentasi', function () {
     return view('dokumentasi');
 });
 
-Route::get('/berita_admin', function () {
-    return view('berita_admin');
-});
+// Route::get('/berita_admin', function () {
+//     return view('berita_admin');
+// });
 
 Route::get('/poster', function () {
     return view('poster');
@@ -202,3 +215,7 @@ Route::get('/profil_landing', function () {
 Route::get('/layanan', function () {
     return view('layanan');
 });
+
+// Route::get('/detail', function () {
+//     return view('detail');
+// });
