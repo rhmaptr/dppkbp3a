@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    <div class="bg-blue-100 w-screen h-screen flex items-center justify-center">
+    <div class="flex items-center justify-center opacity-z">
         <div class="bg-white w-[600px] h-[600px] rounded-xl">
-            <div class="bg-transparent w-full h-[35px] flex ">
+            <div class="bg-transparent w-full h-[35px] flex justify-between">
                 <div class="bg-transparent w-[180px] h-full font-semibold text-[20px] flex items-center justify-center">
                     Tambah Berita</div>
-                <button class="bg-transparent w-[50px] h-full text-white flex items-center justify-center ml-96 hover:bg-red-500"><svg
+                <button onclick="closePopup()" class="bg-transparent w-[50px] h-full text-white flex items-center justify-center ml-auto"><svg
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
                         <path
                             d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z">
@@ -29,40 +29,14 @@
                     <button onclick="openFileDialog()">
                         <img id="cameraIcon" src="camera-plus.svg" alt="Kamera"
                             class="w-full h-full object-cover"></button>
-
                     <!-- Input File (Disembunyikan) -->
-                    <input type="file" id="fileInput" style="display:none;" onchange="handleFileSelect()">
-
-                    <script>
-                    // Fungsi kanggo muka dialog file nalika klik ikon kamera
-                    function openFileDialog() {
-                        document.getElementById('fileInput').click();
-                    }
-
-                    // Fungsi pikeun nangkep file anu dipilih jeung nampilkeun gambar di ikon kamera
-                    function handleFileSelect() {
-                        const fileInput = document.getElementById('fileInput');
-                        const file = fileInput.files[0];
-
-
-                        if (file) {
-                            // Baca file anu dipilih jadi URL
-                            const reader = new FileReader();
-                            reader.onload = function(event) {
-                                // Ganti gambar ikon kamera ku gambar anu dipilih
-                                const cameraIcon = document.getElementById('cameraIcon');
-                                cameraIcon.src = event.target.result;
-                            };
-                            reader.readAsDataURL(file);
-                        }
-                    }
-                    </script>
+                    <input type="file" id="fileInput" style="display:none;" onchange="handleFileSelect()"></input>
                 </div>
             </div>
             <div for="dateInput" class="bg-transparent w-full h-[30px] mt-3 font-medium text-[18px] pl-5">Tanggal</div>
             <div class="bg-transparent w-full h-[50px]">
                 <input type="date" id="dateInput"
-                    class="bg-slate-50 w-[560px] border border-gray-300 rounded-lg px-3 py-2 ml-5 pl-5 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700">
+                    class="bg-slate-50 w-[560px] border border-gray-300 rounded-lg px-3 py-2 ml-5 pl-5 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700"></input>
             </div>
             <div class="bg-transparent w-full h-[30px] mt-1 font-medium text-[18px] pl-5">Judul</div>
             <div class="bg-transparent w-full h-[50px]">

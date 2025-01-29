@@ -10,6 +10,12 @@
 
 <body>
     <div id="profil" class="bg-white w-screen h-[1500px] no-scrollbar">
+    <script>
+document.getElementById('profil').addEventListener('click', function() {
+    // Aksi tambahan bisa dilakukan di sini
+    window.location.href = 'profil';
+});
+</script>
         <x-navbar></x-navbar>
         <div class="bg-transparent w-full h-[1200px] flex-col ">
             <div class="bg-blue-500 w-full h-[240px] pt-28">

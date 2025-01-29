@@ -11,7 +11,7 @@ class NewsController extends Controller
     public function adminIndex()
     {
         $news = News::latest()->get();
-        return view('admin.news.index', compact('news'));
+        return view('berita_admin', compact('news'));
     }
 
     // Form untuk menambahkan berita

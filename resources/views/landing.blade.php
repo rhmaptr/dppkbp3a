@@ -59,7 +59,8 @@
                 <div
                     class="bg-blue-300 w-[650px] h-[380px] rounded-lg flex items-center justify-center mt-[50px] relative">
                     <div class="bg-white w-[600px] h-[330px] rounded-lg">
-                        <div class=" relative bg-red-500 w-[600px] h-[330px] rounded-lg shadow-lg overflow-hidden">
+                        <div id="foto"
+                            class=" relative bg-red-500 w-[600px] h-[330px] rounded-lg shadow-lg overflow-hidden">
                             <!-- Container Slide -->
                             <div id="slider" class="flex transition-transform duration-500">
                                 <div class="min-w-full bg-blue-500 text-white text-center">
@@ -124,7 +125,7 @@
     <div class="bg-[#fafafa] w-screen h-screen flex">
         <div class="bg-transparent w-[670px] h-full flex items-center justify-center">
             <div class="bg-transparent w-[500px] h-[500px]">
-            <img src="lo-lindo-PPEptzBa44Q-unsplash.jpg" alt="Example" class="w-full h-full object-cover" />
+                <img src="lo-lindo-PPEptzBa44Q-unsplash.jpg" alt="Example" class="w-full h-full object-cover" />
             </div>
         </div>
         <div class="bg-transparent w-[700px] h-full flex items-center justify-center">
@@ -247,7 +248,7 @@
             </div>
         </div>
     </div>
-    <!-- galeri -->
+    <!-- Dokumentasi -->
     <div id="dokumentasi" class="bg-[#f5f4f4] w-screen h-screen flex">
         <div class="bg-transparent w-[600px] h-full flex-col">
             <div class="bg-transparent  w-[500px] h-[30px] mt-52 ml-10 font-semibold flex items-center ">Galeri
@@ -273,70 +274,70 @@
                         <h3 class="text-lg font-semibold">PERLINDUNGAN ANAK</h3>
                     </div>
                 </div>
-                <div class="bg-pink-200 w-[255px] h-[150px] group relative overflow-hidden">
+                <!-- <div class="bg-pink-200 w-[255px] h-[150px] group relative overflow-hidden">
                     <img src="DPPKBP3A page 1.png" alt="Berita"
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                     <div
                         class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                         <h3 class="text-lg font-semibold">PERLINDUNGAN ANAK</h3>
                     </div>
-                </div>
-                <div class="bg-pink-300 w-[255px] h-[150px] group relative overflow-hidden">
+                </div> -->
+                <!-- <div class="bg-pink-300 w-[255px] h-[150px] group relative overflow-hidden">
                     <img src="DPPKBP3A page2.png" alt="Berita"
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                     <div
                         class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                         <h3 class="text-lg font-semibold">PERLINDUNGAN ANAK</h3>
                     </div>
-                </div>
-                <div class="bg-pink-400 w-[255px] h-[150px] group relative overflow-hidden">
+                </div> -->
+                <!-- <div class="bg-pink-400 w-[255px] h-[150px] group relative overflow-hidden">
                     <img src="DPPKBP3A page3.png" alt="Berita"
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                     <div
                         class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                         <h3 class="text-lg font-semibold">PERLINDUNGAN ANAK</h3>
                     </div>
-                </div>
-                <div class="bg-pink-100 w-[255px] h-[150px] group relative overflow-hidden">
+                </div> -->
+                <!-- <div class="bg-pink-100 w-[255px] h-[150px] group relative overflow-hidden">
                     <img src="DPPKBP3A page2.png" alt="Berita"
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                     <div
                         class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                         <h3 class="text-lg font-semibold">PERLINDUNGAN ANAK</h3>
                     </div>
-                </div>
-                <div class="bg-pink-200 w-[255px] h-[150px] group relative overflow-hidden">
+                </div> -->
+                <!-- <div class="bg-pink-200 w-[255px] h-[150px] group relative overflow-hidden">
                     <img src="DPPKBP3A page 1.png" alt="Berita"
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                     <div
                         class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                         <h3 class="text-lg font-semibold">PERLINDUNGAN ANAK</h3>
                     </div>
-                </div>
-                <div class="bg-pink-300 w-[255px] h-[150px] group relative overflow-hidden">
+                </div> -->
+                <!-- <div class="bg-pink-300 w-[255px] h-[150px] group relative overflow-hidden">
                     <img src="DPPKBP3A page3.png" alt="Berita"
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                     <div
                         class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                         <h3 class="text-lg font-semibold">PERLINDUNGAN ANAK</h3>
                     </div>
-                </div>
-                <div class="bg-pink-400 w-[255px] h-[150px] group relative overflow-hidden">
+                </div> -->
+                <!-- <div class="bg-pink-400 w-[255px] h-[150px] group relative overflow-hidden">
                     <img src="DPPKBP3A page 1.png" alt="Berita"
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                     <div
                         class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                         <h3 class="text-lg font-semibold">PERLINDUNGAN ANAK</h3>
                     </div>
-                </div>
-                <div class="bg-pink-400 w-[255px] h-[150px] group relative overflow-hidden">
+                </div> -->
+                <!-- <div class="bg-pink-400 w-[255px] h-[150px] group relative overflow-hidden">
                     <img src="DPPKBP3A page2.png" alt="Berita"
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                     <div
                         class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 via-slate-500/70  bg-opacity-60 text-white p-4 text-center opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                         <h3 class="text-lg font-semibold">PERLINDUNGAN ANAK</h3>
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </div>

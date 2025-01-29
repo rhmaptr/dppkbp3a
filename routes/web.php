@@ -7,6 +7,17 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\submitMultiStepController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DokumentasiController;
+use App\Http\Controllers\FotoController;
+use App\Http\Controllers\LandingController;
+
+Route::resource('photos', DokumentasiController::class)->except(['show', 'edit', 'update']);
+Route::get('/landing', [LandingController::class, 'index'])->name('landing');
+
+
+Route::get('/foto', [FotoController::class, 'index'])->name('foto'); 
+Route::post('/foto', [FotoController::class, 'store'])->name('foto.store');
+Route::get('/foto', [FotoController::class, 'show'])->name('landing');
 
 // Route::post('/berita_admin', [BeritaController::class, 'store'])->name('store');
 Route::get('/berita_admin', [BeritaController::class, 'index'])->name('index');
@@ -15,11 +26,6 @@ Route::post('/berita_admin', [BeritaController::class, 'store'])->name('berita_a
 Route::get('/berita_admin/{id}/edit', [BeritaController::class, 'edit'])->name('edit');
 Route::put('/berita_admin/{id}', [BeritaController::class, 'update'])->name('update');
 Route::delete('/berita_admin/{id}', [BeritaController::class, 'destroy'])->name('destroy');
-
-
-Route::get('/login', function () {
-    return view('login');
-});
 
 Route::prefix('/login')->group(function () {
 Route::get('/login', [AdminController::class, 'showLoginForm'])->name('login');
@@ -50,11 +56,6 @@ Route::get('/detail/{id}', [submitMultiStepController::class, 'detail'])->name('
 
 // Public routes
 // Route::get('/news', [NewsController::class, 'userIndex'])->name('news.index');
-
-
-Route::get('/landing', function () {
-    return view('landing');
-});
 
 Route::get('/beranda', function () {
     return view('beranda');
@@ -214,6 +215,10 @@ Route::get('/profil_landing', function () {
 
 Route::get('/layanan', function () {
     return view('layanan');
+});
+
+Route::get('/tambah_berita', function () {
+    return view('tambah_berita');
 });
 
 // Route::get('/detail', function () {

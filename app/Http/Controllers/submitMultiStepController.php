@@ -25,6 +25,7 @@ class submitMultiStepController extends Controller
         'keluhan' => 'required|string|max:1000',
     ]);
 
+    Log::info($request->category);
     User::create([
         'name' => $request->name,
         'nik' => $request->nik,
