@@ -44,7 +44,7 @@
                     
     
                  
-    <button type="submit" id="openPopupBtn"
+    <button id="openPopupBtn"
         class="bg-[#3B86FE] w-[110px] h-[35px] ml-[750px] rounded-lg flex items-center justify-center font-semibold text-white text-[15px] hover:bg-[#336fd1] shadow-md">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffffff" viewBox="0 0 256 256">
             <path

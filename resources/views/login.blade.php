@@ -10,7 +10,7 @@
 
 <body>
     <div class="relative">
-        <form method="POST" action="{{ route('login.submit') }}">
+        <form method="POST" action="{{ route('login') }}">
             @csrf
             <img src="login.png" class="w-full h-full object-cover" />
             <div class="absolute inset-0 flex items-center justify-center text-white">

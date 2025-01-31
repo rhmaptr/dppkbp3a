@@ -10,7 +10,7 @@
 
 <body>
     <div class="bg-white w-screen h-screen flex">
-    <x-side2></x-side2>
+        <x-side2></x-side2>
         <div class="bg-transparent w-full h-screen ">
             <div class="bg-white w-full h-[35px] flex">
                 <div class="bg-white w-[32px] h-full ml-8 flex items-center justify-center "><svg
@@ -41,7 +41,8 @@
                                 </path>
                             </svg></button>
                     </form>
-                    <button type="submit"
+
+                    <button type="submit" id="openPopupBtn"
                         class="bg-[#3B86FE] w-[110px] h-[35px] ml-[750px] rounded-lg flex items-center justify-center font-semibold text-white text-[15px] hover:bg-[#336fd1] shadow-md">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffffff"
                             viewBox="0 0 256 256">
@@ -50,6 +51,31 @@
                             </path>
                         </svg> <span class="pl-2">Tambah</span>
                     </button>
+
+                    <div id="popupbtn" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+                        style="display:none;">
+                        <div class="bg-white rounded-lg p-6 w-[600px]">
+                            <div id="popupContent"></div>
+                        </div>
+                    </div>
+
+                    <script>
+                    document.getElementById('openPopupBtn').addEventListener('click', openPopup);
+
+                    function openPopup() {
+                        fetch('/tambah_visi')
+                            .then(response => response.text())
+                            .then(data => {
+                                document.getElementById('popupContent').innerHTML = data;
+                                document.getElementById('popupbtn').style.display = 'flex';
+                                addPopupEventListeners();
+                            });
+                    }
+
+                    function closePopup() {
+                        document.getElementById('popupbtn').style.display = 'none';
+                    }
+                    </script>
                 </div>
 
                 <!-- bagian tabel -->
@@ -91,7 +117,8 @@
                                                         <path
                                                             d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM192,108.68,147.31,64l24-24L216,84.68Z">
                                                         </path>
-                                                    </svg></div>
+                                                    </svg>
+                                                </div>
                                                 <div
                                                     class="bg-transparent w-[35px] h-full flex items-center justify-center">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -99,7 +126,8 @@
                                                         <path
                                                             d="M224,56a8,8,0,0,1-8,8h-8V208a16,16,0,0,1-16,16H64a16,16,0,0,1-16-16V64H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,56ZM88,32h80a8,8,0,0,0,0-16H88a8,8,0,0,0,0,16Z">
                                                         </path>
-                                                    </svg></div>
+                                                    </svg>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -116,7 +144,8 @@
                                                         <path
                                                             d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM192,108.68,147.31,64l24-24L216,84.68Z">
                                                         </path>
-                                                    </svg></div>
+                                                    </svg>
+                                                </div>
                                                 <div
                                                     class="bg-transparent w-[35px] h-full flex items-center justify-center">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"

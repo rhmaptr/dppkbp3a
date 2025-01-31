@@ -8,7 +8,7 @@
     <title>DPPKBP3A</title>
 </head>
 
-<body>
+<body class="w-full bg-transparent">
     <div class="bg-transparent w-screen h-screen no-scrollbar ">
         <x-navbar></x-navbar>
 
@@ -17,7 +17,7 @@
                 <div class="bg-transparent w-[600px] h-[300px] flex-col mt-[50px]">
                     <div class="bg-transparent w-full h-[80px]">
                         <h1
-                            class="text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 shadow-sm transform hover:scale-110 transition duration-300">
+                            class="text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 shadow-sm transform hover:scale-110 transition duration-300 ">
                             DPPKBP3A</h1>
                     </div>
                     <div class="bg-transparent w-full h-[80px]">
@@ -266,11 +266,14 @@
         </div>
         <div class="bg-blue-500 w-[765px] h-full container mx-auto overflow-hidden flex items-center justify-center">
             <div class="grid grid-cols-3 gap-0">
-            @foreach ($photos as $photo)
-                <div>
-                    <img src="{{ asset('storage/' . $photo->image_path) }}" alt="Foto">
-                </div>
+                @if(isset($photos) && $photos->count() > 0)
+                @foreach ($photos as $photo)
+                <img src="{{ asset('storage/' . $photo->image_path) }}" alt="Photo">
                 @endforeach
+                @else
+                <p>Tidak ada foto tersedia.</p>
+                @endif
+
                 <!-- <div class="bg-pink-100 w-[255px] h-[150px] group relative overflow-hidden">
                     <img src="DPPKBP3A page3.png" alt="Berita"
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />

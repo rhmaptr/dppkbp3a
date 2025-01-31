@@ -21,11 +21,10 @@ class submitMultiStepController extends Controller
         'jml_anak' => 'required|integer|min:0',
         'umur_anak' => 'required|integer|min:0',
         'jml_anggota' => 'required|integer|min:1',
-        'category' => 'required|exists:categories,name',
+        'category' => 'required',
         'keluhan' => 'required|string|max:1000',
     ]);
 
-    Log::info($request->category);
     User::create([
         'name' => $request->name,
         'nik' => $request->nik,
@@ -45,7 +44,7 @@ class submitMultiStepController extends Controller
 
 public function adminData()
 {
-    $users = User::select('id', 'name', 'nik', 'ttl', 'alamat')->get(); // Ambil data tertentu
+    $users = User::select('id', 'name', 'nik', 'ttl', 'alamat', 'category')->get(); // Ambil data tertentu
     return view('pengaduan', compact('users'));
 }
 

@@ -41,7 +41,7 @@
                                 </path>
                             </svg></button>
                     </form>
-                    <button type="submit"
+                    <button type="submit" id="openPopupBtn"
                         class="bg-[#3B86FE] w-[110px] h-[35px] ml-[750px] rounded-lg flex items-center justify-center font-semibold text-white text-[15px] hover:bg-[#336fd1] shadow-md">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffffff"
                             viewBox="0 0 256 256">
@@ -50,6 +50,31 @@
                             </path>
                         </svg> <span class="pl-2">Tambah</span>
                     </button>
+
+                    <div id="popupbtn" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+                        style="display:none;">
+                        <div class="bg-white rounded-lg p-6 w-[600px]">
+                            <div id="popupContent"></div>
+                        </div>
+                    </div>
+
+                    <script>
+                    document.getElementById('openPopupBtn').addEventListener('click', openPopup);
+
+                    function openPopup() {
+                        fetch('/edit_tugas')
+                            .then(response => response.text())
+                            .then(data => {
+                                document.getElementById('popupContent').innerHTML = data;
+                                document.getElementById('popupbtn').style.display = 'flex';
+                                addPopupEventListeners();
+                            });
+                    }
+
+                    function closePopup() {
+                        document.getElementById('popupbtn').style.display = 'none';
+                    }
+                    </script>
                 </div>
 
                 <!-- bagian tabel -->

@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    <div class="bg-blue-100 w-screen h-screen flex items-center justify-center">
-        <div class="bg-white w-[600px] h-[480px] rounded-xl">
-            <div class="bg-transparent w-full h-[35px] flex ">
+    <div class="flex items-center justify-center opacity-z">
+        <div class="bg-white w-[600px] h-[530px] rounded-xl">
+            <div class="bg-transparent w-full h-[35px] flex justify-between">
                 <div class="bg-transparent w-[280px] h-full font-semibold text-[20px] flex pl-5">
-                    Edit Profil</div>
-                <button class="bg-transparent w-[50px] h-full text-white flex items-center justify-center ml-80 "><svg
+                    Tambah Profil</div>
+                <button onclick="closePopup()" class="bg-transparent w-[50px] h-full text-white flex items-center justify-center ml-80 "><svg
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
                         <path
                             d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z">
@@ -64,7 +64,7 @@
                 <textarea
                     class="bg-slate-50 w-[560px] h-[150px] text-black ml-5 pl-5  border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
             </div>
-            <div class="bg-transparent w-full h-[40px] mt-5 flex items-center justify-center">
+            <div class="bg-transparent w-full h-[40px] mt-32 flex items-center justify-center">
                 <button
                     class="bg-[#3B86FE] w-[560px] h-[40px] text-white flex items-center justify-center rounded-lg shadow-md hover:bg-[#336fd1]">Simpan</button>
             </div>

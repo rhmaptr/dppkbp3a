@@ -39,7 +39,7 @@ class FormController extends Controller
             'jml_anak' => $request->jml_anak,
             'umur_anak' => $request->umur_anak,
             'jml_anggota' => $request->jml_anggota,
-            'category_id' => $request->category,
+            'category' => $request->category,
             'keluhan' => $request->keluhan,
         ]);
 

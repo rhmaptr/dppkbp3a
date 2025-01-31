@@ -10,10 +10,13 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DokumentasiController;
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\PhotoController;
 
 Route::resource('photos', DokumentasiController::class)->except(['show', 'edit', 'update']);
 Route::get('/landing', [LandingController::class, 'index'])->name('landing');
-
+Route::get('/tambah_dokumentasi', [PhotoController::class, 'create'])->name('tambah_dokumentasi.create');
+Route::post('/dokumentasi', [PhotoController::class, 'store'])->name('dokumentasi.store');
+Route::get('/photo', [PhotoController::class, 'index'])->name('photo');
 
 Route::get('/foto', [FotoController::class, 'index'])->name('foto'); 
 Route::post('/foto', [FotoController::class, 'store'])->name('foto.store');
@@ -177,10 +180,6 @@ Route::get('/edit_layanan', function () {
     return view('edit_layanan');
 });
 
-Route::get('/tambah_dokumentasi', function () {
-    return view('tambah_dokumentasi');
-});
-
 Route::get('/edit_dokumentasi', function () {
     return view('edit_dokumentasi');
 });
@@ -219,6 +218,10 @@ Route::get('/layanan', function () {
 
 Route::get('/tambah_berita', function () {
     return view('tambah_berita');
+});
+
+Route::get('/tambah_layanan', function () {
+    return view('tambah_layanan');
 });
 
 // Route::get('/detail', function () {

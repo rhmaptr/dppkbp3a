@@ -10,7 +10,7 @@
 
 <body>
     <div class="flex items-center justify-center opacity-z">
-        <div class="bg-white w-[600px] h-[600px] rounded-xl">
+        <div class="bg-white w-[600px] h-[580px] rounded-xl">
             <div class="bg-transparent w-full h-[35px] flex justify-between">
                 <div class="bg-transparent w-[180px] h-full font-semibold text-[20px] flex items-center justify-center">
                     Tambah Berita</div>

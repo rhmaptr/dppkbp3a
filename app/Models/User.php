@@ -11,11 +11,11 @@ class User extends Model
 
     protected $fillable = [
         'name', 'nik', 'ttl', 'alamat', 'no_hp', 'status',
-        'jml_anak', 'umur_anak', 'jml_anggota', 'category_id', 'keluhan',
+        'jml_anak', 'umur_anak', 'jml_anggota', 'category', 'keluhan',
     ];
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category_id');
+        return $this->belongsTo(Category::class, 'category');
     }
 }

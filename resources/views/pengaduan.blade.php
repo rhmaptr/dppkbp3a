@@ -56,6 +56,7 @@
                 <th>NIK</th>
                 <th>TTL</th>
                 <th>Alamat</th>
+                <th>Kategori</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -66,6 +67,7 @@
                     <td>{{ $user->nik }}</td>
                     <td>{{ $user->ttl }}</td>
                     <td>{{ $user->alamat }}</td>
+                    <td>{{ $user->category }}</td>
                     <td>
                         <a href="{{ route('detail', $user->id) }}" class="btn-detail">Detail</a>
                     </td>
@@ -77,78 +79,4 @@
             @endforelse
         </tbody>
     </table>
-                <!-- <div class="bg-transparent w-[1070px] h-[450px] mt-2 ml-3 rounded-lg shadow-lg flex-col">
-                    <div class="bg-transparent w-[1040px] h-full ml-3 overflow-y-auto">
-                        <div class="overflow-x-auto">
-                            <table class="table-auto border-collapse border border-gray-200 w-full">
-                                <thead>
-                                    <tr class="bg-[#3B86FE] text-white">
-                                        <th class="px-4 py-2">No</th>
-                                        <th class="px-4 py-2">Tanggal</th>
-                                        <th class="px-4 py-2">Program</th>
-                                        <th class="px-4 py-2">Jenis Program</th>
-                                        <th class="px-4 py-2">Nama Pelapor</th>
-                                        <th class="px-4 py-2">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($users as $user)
-                                    <tr>
-                                        <td>{{ $user->id }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->nik }}</td>
-                                        <td>{{ $user->ttl }}</td>
-                                        <td>
-                                            @if($user->category)
-                                            {{ $user->category->name }}
-                                            Menampilkan nama kategori
-                                            @else
-                                            N/A
-                                            @endif
-                                        </td>
-                                        <td>{{ $user->alamat }}</td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div> -->
             </div>
-
-            <!-- <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nama</th>
-                        <th>NIK</th>
-                        <th>TTL</th>
-                        <th>Jenis Program</th>
-                        <th>Alamat</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($users as $user)
-                    <tr>
-                        <td>{{ $user->id }}</td>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->nik }}</td>
-                        <td>{{ $user->ttl }}</td>
-                        <td>
-                            @if($user->category)
-                            {{ $user->category->name }}
-                            Menampilkan nama kategori
-                            @else
-                            N/A
-                            @endif
-                        </td>
-                        <td>{{ $user->alamat }}</td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-
-        </div>
-</body>
-
-</html> -->
