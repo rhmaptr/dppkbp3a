@@ -52,6 +52,7 @@
     <table>
         <thead>
             <tr>
+                <th>No</th>
                 <th>Nama</th>
                 <th>NIK</th>
                 <th>TTL</th>
@@ -63,6 +64,7 @@
         <tbody>
             @forelse ($users as $user)
                 <tr>
+                    <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->nik }}</td>
                     <td>{{ $user->ttl }}</td>

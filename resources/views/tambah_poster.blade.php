@@ -9,7 +9,9 @@
 </head>
 
 <body>
-    <div class="bg-blue-100 w-screen h-screen flex items-center justify-center">
+    <div class="bg-blue-100 w-screen h-screen flex">
+        <x-side2></x-side2>
+        <div class="bg-[#fafafa] w-full flex items-center justify-center shadow-sm">
         <div class="bg-white w-[600px] h-[400px] rounded-xl">
             <div class="bg-transparent w-full h-[35px] flex ">
                 <div class="bg-transparent w-[180px] h-full font-semibold text-[20px] flex pl-5">
@@ -65,6 +67,7 @@
             </div>
         </div>
     </div>
+</div>
 </body>
 
 </html>

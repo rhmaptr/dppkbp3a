@@ -6,14 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>DPPKBP3A</title>
+
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
 </head>
 
 <body>
     <div class="bg-white w-screen h-screen flex">
         <x-side2></x-side2>
-        <div class="bg-blue-400 w-full h-screen ">
-            <div class="bg-red-300 w-full h-[35px] flex">
-                <div class="bg-slate-400 w-[32px] h-full ml-8 flex items-center justify-center "><svg
+        <div class="bg-transparent w-full h-screen ">
+            <div class="bg-transparent w-full h-[35px] flex">
+                <div class="bg-transparent w-[32px] h-full ml-8 flex items-center justify-center "><svg
                         xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3b86fe" viewBox="0 0 256 256">
                         <path
                             d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-68-76a12,12,0,1,1-12-12A12,12,0,0,1,140,132Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,132ZM96,172a12,12,0,1,1-12-12A12,12,0,0,1,96,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,140,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,172Z">
@@ -26,9 +32,9 @@
                 ?>
                 </div>
             </div>
-            <div class="bg-green-300 w-[1100px] h-[550px] mt-10 ml-8 rounded-lg shadow-lg flex-col">
+            <div class="bg-white w-[1100px] h-[550px] mt-10 ml-8 rounded-lg shadow-lg flex-col">
                 <div class="bg-transparent w-full h-[35px] font-semibold text-[20px] pt-1 pl-3">Berita</div>
-                <div class="bg-yellow-300 w-full h-[35px] font-semibold text-[20px] pl-3 flex items-center">
+                <div class="bg-transparent w-full h-[35px] font-semibold text-[20px] pl-3 flex items-center">
                     <form class="relative max-w-md">
                         <input type="text" placeholder="Telusuri..."
                             class="w-full px-1 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-[15px]" />
@@ -43,7 +49,7 @@
                         </button>
                     </form>
 
-                    <button id="openPopupBtn1"
+                    <button id="tambah_berita"
                         class="bg-[#3B86FE] w-[110px] h-[35px] ml-[750px] rounded-lg flex items-center justify-center font-semibold text-white text-[15px] hover:bg-[#336fd1] shadow-md">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffffff"
                             viewBox="0 0 256 256">
@@ -53,112 +59,49 @@
                         </svg> <span class="pl-2">Tambah</span>
                     </button>
 
-                    <div id="popupbtn1" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-                        style="display:none;">
-                        <div class="bg-white rounded-lg p-6 w-[600px]">
-                            <!-- <div id="popupContent1"></div> -->
-                            <div class="flex items-center justify-center opacity-z">
-                                <div class="bg-white w-[600px] h-[580px] rounded-xl">
-                                    <div class="bg-transparent w-full h-[35px] flex justify-between">
-                                        <div
-                                            class="bg-transparent w-[180px] h-full font-semibold text-[20px] flex items-center justify-center">
-                                            Tambah Berita</div>
-                                        <button onclick="closePopup()"
-                                            class="bg-transparent w-[50px] h-full text-white flex items-center justify-center ml-auto"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000"
-                                                viewBox="0 0 256 256">
-                                                <path
-                                                    d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z">
-                                                </path>
-                                            </svg></button>
-                                    </div>
-                                    <div class="bg-black w-full h-1"></div>
-                                    <div class="bg-transparent w-full h-[30px] mt-3 font-medium text-[18px] pl-5">Gambar
-                                    </div>
-                                    <div class="bg-transparent w-full h-[140px]">
-                                        <div name="image"
-                                            class="bg-slate-50 w-[560px]  ml-5 h-full rounded-lg border-slate-200 border-2 shadow-md flex items-center justify-center relative overflow-hidden">
-                                            <button onclick="openFileDialog()">
-                                                <img id="cameraIcon" src="camera-plus.svg" alt="Kamera"
-                                                    class="w-full h-full object-cover"></button>
-                                            <!-- Input File (Disembunyikan) -->
-                                            <input type="file" id="fileInput" style="display:none;"
-                                                onchange="handleFileSelect()"></input>
-                                        </div>
-                                    </div>
-                                    <div for="dateInput"
-                                        class="bg-transparent w-full h-[30px] mt-3 font-medium text-[18px] pl-5">Tanggal
-                                    </div>
-                                    <div class="bg-transparent w-full h-[50px]">
-                                        <input type="date" id="dateInput"
-                                            class="bg-slate-50 w-[560px] border border-gray-300 rounded-lg px-3 py-2 ml-5 pl-5 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700"></input>
-                                    </div>
-                                    <div class="bg-transparent w-full h-[30px] mt-1 font-medium text-[18px] pl-5">Judul
-                                    </div>
-                                    <div class="bg-transparent w-full h-[50px]">
-                                        <input type="text" name="title"
-                                            class="bg-slate-50 w-[560px] h-full text-black pl-5 ml-5 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></input>
-                                    </div>
-                                    <div class="bg-transparent w-full h-[30px] mt-2 font-medium text-[18px] pl-5">
-                                        Artikel</div>
-                                    <div class="bg-transparent w-full h-[40px]">
-                                        <textarea name="content"
-                                            class="bg-slate-50 w-[560px] h-[80px] text-black ml-5 pl-5  border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
-                                    </div>
-                                    <div class="bg-transparent w-full h-[40px] mt-16 flex items-center justify-center">
-                                        <button
-                                            class="bg-[#3B86FE] w-[560px] h-[40px] text-white flex items-center justify-center rounded-lg shadow-md hover:bg-[#336fd1]">Simpan</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <script>
-                    document.getElementById('openPopupBtn1').addEventListener('click', openPopup);
-
-                    function openPopup() {
-                        // alert('Test')
-                        // fetch('/tambah_berita')
-                        //     .then(response => response.text())
-                        //     .then(data => {
-                        //         document.getElementById('popupContent1').innerHTML = data;
-                                document.getElementById('popupbtn1').style.display = 'flex';
-                                addPopupEventListeners();
-                        //     });
-                    }
-
-                    function closePopup() {
-                        document.getElementById('popupbtn1').style.display = 'none';
-                    }
-
-                    function addPopupEventListeners() {
-                        document.getElementById('cameraIcon').addEventListener('click', openFileDialog);
-                        document.getElementById('fileInput').addEventListener('change', handleFileSelect);
-                    }
-
-                    function openFileDialog() {
-                        document.getElementById('fileInput').click();
-                    }
-
-                    function handleFileSelect() {
-                        const fileInput = document.getElementById('fileInput');
-                        const file = fileInput.files[0];
-
-                        if (file) {
-                            const reader = new FileReader();
-                            reader.onload = function(event) {
-                                const cameraIcon = document.getElementById('cameraIcon').querySelector('img');
-                                cameraIcon.src = event.target.result;
-                            };
-                            reader.readAsDataURL(file);
-                        }
-                    }
+                    document.getElementById("tambah_berita").addEventListener("click", function() {
+                        window.location.href = "/tambah_berita";
+                    });
                     </script>
                 </div>
 
                 <!-- bagian tabel -->
-                <div class="bg-transparent w-[1070px] h-[450px] mt-2 ml-3 rounded-lg shadow-lg flex-col">
+
+                <body>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>gambar</th>
+                                <th>Tanggal</th>
+                                <th>Judul</th>
+                                <th>Artikel</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($beritas as $berita)
+                            <tr>
+                                <td>{{ $berita->id }}</td>
+                                <td>{{ $beritapoto->image }}</td>
+                                <td>{{ $berita->title }}</td>
+                                <td>
+                                    <a href="{{ route('detail', $berita->id) }}" class="btn-detail">Detail</a>
+                                </td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="5">Tidak ada data pengguna.</td>
+                            </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- <div class="bg-transparent w-[1070px] h-[450px] mt-2 ml-3 rounded-lg shadow-lg flex-col">
                     <div class="bg-transparent w-[1040px] h-full ml-3 overflow-y-auto">
                         <div class="overflow-x-auto">
                             <table class="table-auto border-collapse border border-gray-200 w-full">
@@ -242,7 +185,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 
 </html>

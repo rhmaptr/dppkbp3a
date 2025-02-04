@@ -13,6 +13,11 @@ class BeritaController extends Controller
     return view('berita_admin', compact('beritas'));
 }
 
+public function create()
+    {
+        return view('tambah_berita');
+    }
+
 public function store(Request $request)
 {
     $request->validate([

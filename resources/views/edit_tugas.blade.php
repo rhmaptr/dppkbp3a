@@ -9,9 +9,11 @@
 </head>
 
 <body>
-    <div class="flex items-center justify-center opacity-z">
+    <div class="flex bg-slate-500 w-screen h-screen">
+        <x-side2></x-side2>
+        <div class="bg-[#fafafa] w-full flex items-center justify-center shadow-sm">
         <div class="bg-white w-[600px] h-[350px] rounded-xl">
-            <div class="bg-transparent w-full h-[35px] flex justify-between">
+            <div class="bg-transparent w-full h-[35px] flex">
                 <div class="bg-transparent w-[340px] h-full font-semibold text-[20px] flex pl-5">
                     Tugas Pokok</div>
                 <button  onclick="closePopup()" class="bg-transparent w-[50px] h-full text-white flex items-center justify-center ml-80 "><svg
@@ -33,6 +35,7 @@
             </div>
         </div>
     </div>
+</div>
 </body>
 
 </html>

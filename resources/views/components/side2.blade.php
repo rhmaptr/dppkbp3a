@@ -1,4 +1,4 @@
-<div class="bg-white w-[270px] h-screen flex-col shadow-lg">
+<div class="bg-white w-[270px] flex-col shadow-lg">
     <!-- beranda -->
     <a href="/beranda"
         class="{{ request()->is('beranda') ? 'border-blue-500 font-medium cursor-pointer border-r-[5px] bg-slate-200' : 'bg-white hover:bg-slate-100 '}} h-[40px] flex  items-center pl-3 gap-x-3 font-medium ">
@@ -23,7 +23,7 @@
             </svg>
         </div>
         <p class="">Pengaduan</p>
-        <div class="ml-auto bg-pink-600 pt-2">
+        <div class="ml-auto bg-transaprent pt-2">
             <svg id="dropdownIconPengaduan" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000"
                 viewBox="0 0 256 256" class="">
                 <path id="dropdownIconPathPengaduan"
@@ -92,7 +92,7 @@
         </div>
         <p class="">Profil
         </p>
-        <div class="ml-auto bg-pink-600 pt-2">
+        <div class="ml-auto bg-transparent pt-2">
             <svg id="dropdownIcon1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000"
                 viewBox="0 0 256 256" class="">
                 <path id="dropdownIconPath1"

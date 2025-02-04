@@ -6,11 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>DPPKBP3A</title>
+
+    <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    </style>
 </head>
 
 <body>
     <div class="bg-white w-screen h-screen flex">
-    <x-side2></x-side2>
+        <x-side2></x-side2>
         <div class="bg-transparent w-full h-screen ">
             <div class="bg-white w-full h-[35px] flex">
                 <div class="bg-white w-[32px] h-full ml-8 flex items-center justify-center "><svg
@@ -27,7 +34,8 @@
                 </div>
             </div>
             <div class="bg-transparent w-[1100px] h-[550px] mt-10 ml-8 rounded-lg shadow-lg flex-col">
-                <div class="bg-transparent w-full h-[35px] font-semibold text-[20px] pt-1 pl-3">konten Profil landing page</div>
+                <div class="bg-transparent w-full h-[35px] font-semibold text-[20px] pt-1 pl-3">konten Profil landing
+                    page</div>
                 <div class="bg-transparent w-full h-[35px] font-semibold text-[20px] pl-3 flex">
                     <form class="relative max-w-md">
                         <input type="text" placeholder="Telusuri..."
@@ -41,7 +49,7 @@
                                 </path>
                             </svg></button>
                     </form>
-                    <button id="openPopupBtn"
+                    <button id="tambah_profil"
                         class="bg-[#3B86FE] w-[110px] h-[35px] ml-[750px] rounded-lg flex items-center justify-center font-semibold text-white text-[15px] hover:bg-[#336fd1] shadow-md">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffffff"
                             viewBox="0 0 256 256">
@@ -50,99 +58,48 @@
                             </path>
                         </svg> <span class="pl-2">Tambah</span>
                     </button>
-                    <div id="popupbtn" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" style="display:none;">
-        <div class="bg-white rounded-lg p-6 w-[600px]">
-            <div id="popupContent"></div>
-        </div>
-    </div>
 
-    <script>
-    document.getElementById('openPopupBtn').addEventListener('click', openPopup);
-
-    function openPopup() {
-        fetch('/edit_profil')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('popupContent').innerHTML = data;
-                document.getElementById('popupbtn').style.display = 'flex';
-                addPopupEventListeners();
-            });
-    }
-
-    function closePopup() {
-        document.getElementById('popupbtn').style.display = 'none';
-    }
-
-    function openFileDialog() {
-                        document.getElementById('fileInput').click();
-                    }
-
-                    // Fungsi pikeun nangkep file anu dipilih jeung nampilkeun gambar di ikon kamera
-                    function handleFileSelect() {
-                        const fileInput = document.getElementById('fileInput');
-                        const file = fileInput.files[0];
-
-
-                        if (file) {
-                            // Baca file anu dipilih jadi URL
-                            const reader = new FileReader();
-                            reader.onload = function(event) {
-                                // Ganti gambar ikon kamera ku gambar anu dipilih
-                                const cameraIcon = document.getElementById('cameraIcon');
-                                cameraIcon.src = event.target.result;
-                            };
-                            reader.readAsDataURL(file);
-                        }
-                    }
-    </script>
+                    <script>
+                    document.getElementById("tambah_profil").addEventListener("click", function() {
+                        window.location.href = "/tambah_profil";
+                    });
+                    </script>
                 </div>
 
                 <!-- bagian tabel -->
-                <div class="bg-transparent w-[1070px] h-[450px] mt-2 ml-3 rounded-lg shadow-lg flex-col">
-                    <div class="bg-transparent w-[1040px] h-full ml-3 overflow-y-auto">
-                        <div class="overflow-x-auto">
-                            <table class="table-auto border-collapse border border-gray-200 w-full">
-                                <thead>
-                                    <tr class="bg-[#3B86FE] text-white">
-                                        <th class="px-4 py-2">No</th>
-                                        <th class="px-4 py-2">gambar</th>
-                                        <th class="px-4 py-2">Artikel</th>
-                                        <th class="px-4 py-2">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="bg-gray-50 ">
-                                        <td class=" px-4 py-2 text-center">1</td>
-                                        <td class=" px-4 py-2 text-center flex items-center justify-center">
-                                            <div class="bg-red-300 w-16 h-10 "></div>
-                                        </td>
-                                        <td class=" px-4 py-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quibusdam doloribus ratione, optio officia beatae deserunt tempore, ducimus iusto totam nesciunt adipisci? Ullam eligendi qui velit eaque ea tempora. Distinctio obcaecati asperiores doloremque unde nesciunt! Quo placeat similique facere ducimus.</td>
-                                        <td class=" px-4 py-2  flex items-center justify-center">
-                                            <div class="bg-transparent w-[70px] h-[30px] flex">
-                                                <div
-                                                    class="bg-transarent w-[35px] h-full flex items-center justify-center">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                        fill="#59a1ee" viewBox="0 0 256 256">
-                                                        <path
-                                                            d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM192,108.68,147.31,64l24-24L216,84.68Z">
-                                                        </path>
-                                                    </svg></div>
-                                                <div
-                                                    class="bg-transparent w-[35px] h-full flex items-center justify-center">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                        fill="#ea3939" viewBox="0 0 256 256">
-                                                        <path
-                                                            d="M224,56a8,8,0,0,1-8,8h-8V208a16,16,0,0,1-16,16H64a16,16,0,0,1-16-16V64H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,56ZM88,32h80a8,8,0,0,0,0-16H88a8,8,0,0,0,0,16Z">
-                                                        </path>
-                                                    </svg></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                <body>
+                    <table>
+                        <thead>
+                            <tr class="bg-blue-500 text-white h-[40px]">
+                                <th>No</th>
+                                <th>Gambar</th>
+                                <th>Artikel</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($profils as $profil)
+                            <tr>
+                                <td>{{ $profil->id }}</td>
+                                <td>{{ $profil->foto }}</td>
+                                <td>{{ $profil->title }}</td>
+                                <td>
+                                    <!--  -->
+                                    <form action="{{ route('profil_landing.destroy', $profil->id) }}" method="POST"
+                                        onsubmit="return confirm('Apakah Anda yakin?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="5">Tidak ada data pengguna.</td>
+                            </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
             </div>
         </div>
     </div>

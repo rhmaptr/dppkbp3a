@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\FormController;
+use App\Http\Controllers\KontenController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\submitMultiStepController;
 use App\Http\Controllers\UserController;
@@ -11,93 +11,82 @@ use App\Http\Controllers\DokumentasiController;
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\LayananController;
+use App\Http\Controllers\User2Controller;
 
-Route::resource('photos', DokumentasiController::class)->except(['show', 'edit', 'update']);
-Route::get('/landing', [LandingController::class, 'index'])->name('landing');
-Route::get('/tambah_dokumentasi', [PhotoController::class, 'create'])->name('tambah_dokumentasi.create');
+// Route::get('/profil_landing', function () {
+//     return view('profil_landing');
+// })->name('profil_landing');
+
+Route::get('/landing', [LandingController::class, 'landing'])->name('landing');
+Route::get('/landing', [LandingController::class, 'landing'])->name('landing');
+
+Route::get('/tambah_dokumentasi', [PhotoController::class, 'create'])->name('tambah_dokumentasi');
+Route::post('/tambah_dokumentasi', [PhotoController::class, 'store'])->name('tambah_dokumentasi.create');
 Route::post('/dokumentasi', [PhotoController::class, 'store'])->name('dokumentasi.store');
-Route::get('/photo', [PhotoController::class, 'index'])->name('photo');
+Route::get('/dokumentasi', [PhotoController::class, 'index'])->name('dokumentasi');
+Route::get('/editdokumentasi/{id}', [PhotoController::class, 'edit'])->name('dokumentasi.edit');
+Route::put('/dokumentasi/{id}', [PhotoController::class, 'update'])->name('dokumentasi.update');
+Route::delete('/dokumentasi/{id}', [PhotoController::class, 'destroy'])->name('dokumentasi.destroy');
 
 Route::get('/foto', [FotoController::class, 'index'])->name('foto'); 
 Route::post('/foto', [FotoController::class, 'store'])->name('foto.store');
-Route::get('/foto', [FotoController::class, 'show'])->name('landing');
+Route::get('/foto', [FotoController::class, 'show'])->name('foto.landing');
 
-// Route::post('/berita_admin', [BeritaController::class, 'store'])->name('store');
 Route::get('/berita_admin', [BeritaController::class, 'index'])->name('index');
-// Route::get('/admin/berita/create', [BeritaController::class, 'create'])->name('admin.berita.create');
-Route::post('/berita_admin', [BeritaController::class, 'store'])->name('berita_admin.store');
-Route::get('/berita_admin/{id}/edit', [BeritaController::class, 'edit'])->name('edit');
-Route::put('/berita_admin/{id}', [BeritaController::class, 'update'])->name('update');
-Route::delete('/berita_admin/{id}', [BeritaController::class, 'destroy'])->name('destroy');
+Route::get('/tambah_berita', [BeritaController::class, 'create'])->name('tambah_berita');
+Route::post('/tambah_berita', [BeritaController::class, 'store'])->name('tambah_berita.create');
+// Route::get('/berita_admin/{id}/edit', [BeritaController::class, 'edit'])->name('edit');
+// Route::put('/berita_admin/{id}', [BeritaController::class, 'update'])->name('update');
+// Route::delete('/berita_admin/{id}', [BeritaController::class, 'destroy'])->name('destroy');
 
 Route::prefix('/login')->group(function () {
-Route::get('/login', [AdminController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AdminController::class, 'login'])->name('login.submit');
+Route::get('/', [AdminController::class, 'showLoginForm'])->name('login');
+Route::post('/', [AdminController::class, 'login'])->name('login.submit');
 Route::middleware('auth:admin')->group(function () {
 Route::get('beranda', [AdminController::class, 'beranda'])->name('beranda');
     });
 });
 
-
-// Route::post('/submit-multistep', [FormController::class, 'submitMultiStep'])->name('submit.multistep');
-Route::get('/tindakankb', [FormController::class, 'tindakankb'])->name('tindakankb');
+Route::get('/tindakankb', [submitMultiStepController::class, 'index'])->name('tindakankb');
 Route::post('/tindakankb', [submitMultiStepController::class, 'submitMultiStep'])->name('tindakankb.submitMultiStep');
-Route::get('/pengaduan', [FormController::class, 'pengaduan'])->name('pengaduan');
 
-
-// Admin route
+// Admin pengaduan
 Route::get('/pengaduan', [UserController::class, 'pengaduan'])->name('pengaduan');
 Route::get('/detail/{id}', [submitMultiStepController::class, 'detail'])->name('detail');
 
+//admin profil
+Route::get('/tambah_profil', [User2Controller::class, 'create'])->name('tambah_profil');
+Route::post('/tambah_profil', [User2Controller::class, 'store'])->name('tambah_profil.create');
+Route::post('/profil_landing', [User2Controller::class, 'store'])->name('profil_landing.store');
+Route::get('/profil_landing', [User2Controller::class, 'index'])->name('profil_landing');
+// Route::get('/editdokumentasi/{id}', [User2Controller::class, 'edit'])->name('dokumentasi.edit');
+Route::put('/profil_landing/{id}', [User2Controller::class, 'update'])->name('profil_landing.update');
+Route::delete('/profil_landing/{id}', [User2Controller::class, 'destroy'])->name('profil_landing.destroy');
+// Route::get('/profil_landing', [User2Controller::class, 'index'])->name('profil_landing');
+// Route::get('/tambah_profil', [User2Controller::class, 'create'])->name('tambah_profil');
+// Route::post('/profil_landing', [User2Controller::class, 'profil'])->name('tambah_profil.profil');
 
-// Admin routes
-// Route::prefix('admin')->name('admin.')->group(function () {
-//     Route::get('/news', [NewsController::class, 'adminIndex'])->name('news.index');
-//     Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
-//     Route::post('/news', [NewsController::class, 'store'])->name('news.store');
-// });
+//admin layanan
+Route::get('/layanan_admin', [LayananController::class, 'index'])->name('layanan_admin');
+Route::get('/edit_layanan', [LayananController::class, 'create'])->name('edit_layanan');
+Route::post('/edit_layanan', [LayananController::class, 'store'])->name('edit_layanan.create');
 
-// Public routes
-// Route::get('/news', [NewsController::class, 'userIndex'])->name('news.index');
+//admin konten pengaduan
+Route::get('/pengaduan_2', [KontenController::class, 'index'])->name('pengaduan_2');
+Route::get('/edit_pengaduan', [KontenController::class, 'create'])->name('edit_pengaduan');
+Route::post('/edit_pengaduan', [KontenController::class, 'store'])->name('edit_pengaduan.create');
 
 Route::get('/beranda', function () {
     return view('beranda');
-});
-
-Route::get('/tindakankb', function () {
-    return view('tindakankb');
-});
-
-Route::get('/tindakankb2', function () {
-    return view('tindakankb2');
-});
-
-Route::get('/tindakankb3', function () {
-    return view('tindakankb3');
 });
 
 Route::get('/tindakanpp', function () {
     return view('tindakanpp');
 });
 
-Route::get('/tindakanpp2', function () {
-    return view('tindakanpp2');
-});
-
-Route::get('/tindakanpp3', function () {
-    return view('tindakanpp3');
-});
-
 Route::get('/tindakanpa', function () {
     return view('tindakanpa');
-});
-
-Route::get('/tindakanpa2', function () {
-    return view('tindakanpa2');
-});
-
-Route::get('/tindakanpa3', function () {
-    return view('tindakanpa3');
 });
 
 Route::get('/berita', function () {
@@ -124,13 +113,13 @@ Route::get('/pusat_admin', function () {
     return view('pusat_admin');
 });
 
-Route::get('/layanan_admin', function () {
-    return view('layanan_admin');
-});
+// Route::get('/layanan_admin', function () {
+//     return view('layanan_admin');
+// });
 
-Route::get('/dokumentasi', function () {
-    return view('dokumentasi');
-});
+// Route::get('/dokumentasi', function () {
+//     return view('dokumentasi');
+// });
 
 // Route::get('/berita_admin', function () {
 //     return view('berita_admin');
@@ -184,8 +173,8 @@ Route::get('/edit_dokumentasi', function () {
     return view('edit_dokumentasi');
 });
 
-Route::get('/edit_profil', function () {
-    return view('edit_profil');
+Route::get('/tambah_profil', function () {
+    return view('tambah_profil');
 });
 
 Route::get('/edit_tugas', function () {
@@ -206,10 +195,6 @@ Route::get('/isi_berita', function () {
 
 Route::get('/tugas_pokok', function () {
     return view('tugas_pokok');
-});
-
-Route::get('/profil_landing', function () {
-    return view('profil_landing');
 });
 
 Route::get('/layanan', function () {

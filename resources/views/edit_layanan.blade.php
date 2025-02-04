@@ -9,9 +9,11 @@
 </head>
 
 <body>
-    <div class="flex items-center justify-center opacity-z">
+    <div class="flex bg-slate-500 w-screen h-screen">
+    <x-side2></x-side2>
+    <div class="bg-[#fafafa] w-full flex items-center justify-center shadow-sm">
         <div class="bg-white w-[600px] h-[580px] rounded-xl">
-            <div class="bg-transparent w-full h-[35px] flex justify-between">
+            <div class="bg-transparent w-full h-[35px] flex">
                 <div class="bg-transparent w-[380px] h-full font-semibold text-[20px] flex pl-5">
                     Tambah Pelayanan</div>
                 <button onclick="closePopup()" class="bg-transparent w-[50px] h-full text-white flex items-center justify-center ml-72"><svg
@@ -31,7 +33,7 @@
                             class="w-full h-full object-cover"></button>
 
                     <!-- Input File (Disembunyikan) -->
-                    <input type="file" id="fileInput" style="display:none;" onchange="handleFileSelect()">
+                    <input name="gambar" type="file" id="fileInput" style="display:none;" onchange="handleFileSelect()">
 
                     <script>
                     // Fungsi kanggo muka dialog file nalika klik ikon kamera
@@ -61,25 +63,26 @@
             </div>
             <div class="bg-transparent w-full h-[30px] mt-2 font-medium text-[18px] pl-5">Judul</div>
             <div class="bg-transparent w-full h-[50px]">
-                <input type="text"
+                <input type="text" name="judul"
                     class="bg-slate-50 w-[560px] h-full text-black pl-5 ml-5 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></input>
             </div>
             <div class="bg-transparent w-full h-[30px] mt-2 font-medium text-[18px] pl-5">Penjelasan</div>
             <div class="bg-transparent w-full h-[40px]">
-                <input type="text"
+                <input type="text" name="penjelasan"
                     class="bg-slate-50 w-[560px] h-full text-black pl-5 ml-5 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></input>
             </div>
             <div class="bg-transparent w-full h-[30px] mt-2 font-medium text-[18px] pl-5">Artikel</div>
             <div class="bg-transparent w-full h-[40px]">
-                <textarea
+                <textarea name="artikel"
                     class="bg-slate-50 w-[560px] h-[80px] text-black ml-5 pl-5  border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
             </div>
             <div class="bg-transparent w-full h-[40px] mt-16 flex items-center justify-center">
-                <button
+                <button type="submit"
                     class="bg-[#3B86FE] w-[560px] h-[40px] text-white flex items-center justify-center rounded-lg shadow-md hover:bg-[#336fd1]">Simpan</button>
             </div>
         </div>
     </div>
+</div>
 </body>
 
 </html>

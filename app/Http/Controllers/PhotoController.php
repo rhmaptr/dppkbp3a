@@ -10,7 +10,7 @@ class PhotoController extends Controller
     public function index()
     {
         $photos = Photo::all();
-        return view('landing', compact('photos'));
+        return view('dokumentasi', compact('photos'));
     }
 
     public function create()
@@ -20,21 +20,56 @@ class PhotoController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'image' => 'required|image',
+    // Validasi input
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
+        // Upload image dan simpan path-nya
         $image = $request->file('image')->store('photos', 'public');
-        Photo::create(['image' => $image]);
+
+        // Simpan data ke database
+        Photo::create([
+            'title' => $request->title,
+            'image' => $image,
+        ]);
 
         return redirect()->route('dokumentasi')->with('success', 'Foto berhasil ditambahkan!');
     }
 
-    public function destroy($id)
-    {
-        $photo = Photo::findOrFail($id);
-        $photo->delete();
-        return redirect()->route('dokumentasi')->with('success', 'Foto berhasil dihapus!');
-    }
+    public function edit($id)
+{
+    $photos = Photo::findOrFail($id);
+    return view('editdokumentasi', compact('photos'));
+}
+
+public function update(Request $request, $id)
+{
+    // Validasi input
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+
+    // Temukan berita berdasarkan ID dan update
+    $photos = Photo::findOrFail($id);
+    $photos->update([
+        'title' => $request->input('title'),
+        'image' => $request->input('image'),
+    ]);
+
+    // Redirect atau return response setelah update
+    return redirect()->route('dokumentasi')->with('success', 'Berita berhasil diperbarui!');
+}
+
+public function destroy($id)
+{
+    $photos = Photo::findOrFail($id);
+    $photos->delete();
+
+    return redirect()->route('dokumentasi')->with('success', 'Berita berhasil dihapus!');
+}
+
 }
 

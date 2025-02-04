@@ -8,8 +8,13 @@ use App\Models\User;
 
 class submitMultiStepController extends Controller
 {
+    public function index()
+    {
+        return view('tindakankb');
+    }
     public function submitMultiStep(Request $request)
 {
+
     Log::info($request);
     $request->validate([
         'name' => 'required|string|max:255',
@@ -25,6 +30,7 @@ class submitMultiStepController extends Controller
         'keluhan' => 'required|string|max:1000',
     ]);
 
+    Log::info('The Request has been validated');
     User::create([
         'name' => $request->name,
         'nik' => $request->nik,
@@ -39,7 +45,8 @@ class submitMultiStepController extends Controller
         'keluhan' => $request->keluhan,
     ]);
 
-    return redirect()->route('pengaduan')->with('success', 'Data berhasil disimpan!');
+    Log::info('User Created Successfully');
+    return redirect()->route('tindakankb')->with('success', 'Data berhasil disimpan!');
 }
 
 public function adminData()
@@ -48,9 +55,10 @@ public function adminData()
     return view('pengaduan', compact('users'));
 }
 
-public function adminDetail($id)
+public function Detail($id)
 {
-    $user = User::with('category')->findOrFail($id); // Ambil detail pengguna berdasarkan ID
+    $user = User::findOrFail($id); // Ambil detail pengguna berdasarkan ID
+    Log::info($user);
     return view('detail', compact('user'));
 }
 

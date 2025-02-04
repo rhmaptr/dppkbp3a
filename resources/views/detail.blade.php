@@ -43,7 +43,7 @@
             <span class="label">Jumlah Anggota Keluarga:</span> {{ $user->jml_anggota ?? '-' }}
         </div>
         <div class="detail">
-            <span class="label">Kategori:</span> {{ $user->category->name ?? '-' }}
+            <span class="label">Kategori:</span> {{ $user->category ?? '-' }}
         </div>
         <div class="detail">
             <span class="label">Keluhan:</span> {{ $user->keluhan ?? '-' }}
